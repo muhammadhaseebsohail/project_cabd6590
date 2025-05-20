@@ -1,0 +1,63 @@
+Here is the CSS module for the UserRegistrationForm component:
+
+```css
+/* UserRegistrationForm.module.css */
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.errorMessage {
+    color: red;
+    margin-bottom: 10px;
+}
+```
+
+You can use it in your component by importing the CSS module and using it like this:
+
+```jsx
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import styles from './UserRegistrationForm.module.css';
+
+const UserRegistrationForm = (props) => {
+    // ... Rest of the code
+
+    return (
+        <form onSubmit={handleSubmit} className={styles.form}>
+            <input type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="Name" className={styles.input}/>
+            {formError.name && <p className={styles.errorMessage}>{formError.name}</p>}
+            <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email" className={styles.input}/>
+            {formError.email && <p className={styles.errorMessage}>{formError.email}</p>}
+            <input type="password" name="password" value={formData.password} onChange={handleInputChange} placeholder="Password" className={styles.input}/>
+            {formError.password && <p className={styles.errorMessage}>{formError.password}</p>}
+            <button type="submit" className={styles.button}>Register</button>
+        </form>
+    )
+}
+
+UserRegistrationForm.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+}
+
+export default UserRegistrationForm;
+```
+
+As you can see, we replaced the class names in the JSX code with the ones from the CSS module. This way, we avoid potential naming conflicts and improve the modularity of our component.
