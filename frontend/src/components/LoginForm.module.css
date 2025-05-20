@@ -1,0 +1,72 @@
+Sure, here's a CSS module that matches the component's needs:
+
+```css
+/* LoginForm.module.css */
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+
+.input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.errorMessage {
+  color: red;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+```
+
+You would then import this CSS module into your component like so:
+
+```jsx
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import styles from './LoginForm.module.css';
+
+// ...
+
+<Form className={styles.form} onSubmit={handleSubmit}>
+  {error && <div className={styles.errorMessage}>{error}</div>}
+  <input
+    className={styles.input}
+    type="text"
+    placeholder="Username"
+    value={username}
+    onChange={(e) => setUsername(e.target.value)}
+  />
+  <input
+    className={styles.input}
+    type="password"
+    placeholder="Password"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+  />
+  <button type="submit">Login</button>
+</Form>
+
+// ...
+```
+
+This CSS module adds styling to the form, input fields, error message and the button. It also adds hover effect to the button and box shadow to the form.
