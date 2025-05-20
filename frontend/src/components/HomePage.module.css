@@ -1,0 +1,35 @@
+The CSS module styling for the component is as follows:
+
+```css
+/* HomePage.module.css */
+
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.home h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.home p {
+    font-size: 1.2em;
+    color: #666;
+}
+```
+
+Here's what each style rule does:
+
+- `.home`: This rule applies to the main div in the HomePage component. It makes the div take up the full width and height of the viewport (`100%` width and `100vh` height). The `display: flex`, `flex-direction: column`, `align-items: center`, and `justify-content: center` properties center the div's children both horizontally and vertically. The `text-align: center` property centers the text within the div. The `background-color` is a light gray, and `padding: 20px` adds some space around the div's content.
+
+- `.home h1`: This rule applies to the h1 tag in the HomePage component. It sets the font size to `2.5em`, which is 2.5 times the size of the base font. The color of the text is a dark gray (`#333`).
+
+- `.home p`: This rule applies to the p tag in the HomePage component. It sets the font size to `1.2em`, which is 1.2 times the size of the base font. The color of the text is a medium gray (`#666`).
